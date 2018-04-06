@@ -14,14 +14,13 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-print ("YOUR BASE_DIR IS: ", BASE_DIR)
 
 # … somewhere after BASE_DIR definition …
 # from utils.misc import get_media_svn_revision
 # STATIC_URL = "/static/%s/" % get_media_svn_revision(BASE_DIR)
 
-# from utils.misc import get_git_changeset
-# STATIC_URL = "/static/%s/" % get_git_changeset(BASE_DIR)
+from utils.misc import get_git_changeset
+STATIC_URL = "/static/%s/" % get_git_changeset(BASE_DIR)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
